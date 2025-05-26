@@ -1,22 +1,26 @@
+# name
 name: ci
 
+# trigger
 on:
   pull_request:
     branches: [main]
 
+# jobs to run
 jobs:
+  # test automation
   tests:
     name: Tests
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # server provided by github
 
     steps:
       - name: Check out code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4 # Checkout code. v4 is the latest
 
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
           go-version: "1.23.0"
 
-      - name: Force Failure
-        run: (exit 1)
+      - name: Check go version
+        run:  go version
