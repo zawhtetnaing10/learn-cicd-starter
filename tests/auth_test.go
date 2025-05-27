@@ -31,8 +31,7 @@ func TestGetApiKeyFailure(t *testing.T) {
 	}
 	apiKey, err := auth.GetAPIKey(header)
 
-	// TODO: - Purposely broken code. Change back to ==
-	if err != nil {
+	if err == nil {
 		t.Errorf("not returning malformed api key format")
 	}
 
