@@ -14,8 +14,6 @@ Create a `.env` file in the root of the project with the following contents:
 PORT="8080"
 ```
 
-![alt Test status](https://github.com/zawhtetnaing10/learn-cicd-starter/actions/workflows/.github/workflows/ci.yml/badge.svg)
-
 Run the server:
 
 ```bash
