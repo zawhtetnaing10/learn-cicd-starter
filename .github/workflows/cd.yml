@@ -36,5 +36,8 @@ jobs:
       - name: 'Use gcloud CLI'
         run: 'gcloud info'
       
-      - name: 'Build and push to GCP'
+      - name: 'Build image and push to Google Artifact Registry'
         run: 'gcloud builds submit --tag us-central1-docker.pkg.dev/notely-462610/notely-ar-repo/notely:latest .'
+      
+      - name: 'Deploy to Cloud run'
+        run: 'gcloud run deploy notely --image us-central1-docker.pkg.dev/notely-462610/notely-ar-repo/notely:latest --region us-central1 --allow-unauthenticated --project notely-462610 --max-instances=4'
